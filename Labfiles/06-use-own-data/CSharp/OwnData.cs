@@ -29,10 +29,16 @@ Console.WriteLine("Enter a question:");
 string text = Console.ReadLine() ?? "";
 
 // Configure your data source
+AzureSearchChatExtensionConfiguration ownDataConfig = new()
+{
+    SearchEndpoint = new Uri(azureSearchEndpoint),
+    Authentication = new OnYourDataApiKeyAuthenticationOptions(azureSearchKey),
+    IndexName = azureSearchIndex
+};
 
 
 // Send request to Azure OpenAI model  
-Console.WriteLine("...Sending the following request to Azure OpenAI endpoint...");  
+Console.WriteLine("...Sending the following request to Azure OpenAI endpoint...");
 Console.WriteLine("Request: " + text + "\n");
 
 ChatCompletionsOptions chatCompletionsOptions = new ChatCompletionsOptions()
@@ -47,7 +53,7 @@ ChatCompletionsOptions chatCompletionsOptions = new ChatCompletionsOptions()
     // Specify extension options
     AzureExtensionsOptions = new AzureChatExtensionsOptions()
     {
-        Extensions = {ownDataConfig}
+        Extensions = { ownDataConfig }
     }
 };
 
