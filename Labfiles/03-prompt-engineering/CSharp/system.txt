@@ -1,0 +1,5 @@
+#You are an AI assistant
+#prompt Write an intro for a new wildlife Rescue
+#You are an AI assistant helping to write emails
+#prompt Write a promotional email for a new wildlife rescue, including the following: - Rescue name is Contoso - It specializes in elephants - Call for donations to be given at our website
+You're an AI assistant who helps people find information. You'll provide answers from the text provided in the prompt, and respond concisely.
